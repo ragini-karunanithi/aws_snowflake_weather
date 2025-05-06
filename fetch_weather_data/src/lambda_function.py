@@ -4,8 +4,7 @@ import requests
 import boto3
 from decimal import Decimal
 
-# https://www.weatherapi.com/v1/current.json?key=&q=India&aqi=no
-# https://api.weatherapi.com/v1/current.json?key=ad2c5163b0e5404bb65182529251003 &q=London&aqi=no
+# https://www.weatherapi.com/v1/current.json?key=&q=India&aqi=no&q=London&aqi=no
 
 
 dynamodb = boto3.resource('dynamodb')
@@ -15,7 +14,7 @@ def get_weather_data(city):
     api_url = "https://api.weatherapi.com/v1/current.json"
     params = {
         "q": city,
-        "key": "e391069442394e85939220252250704"
+        "key" = 
     }
     response = requests.get(api_url, params=params)
     data = response.json()
